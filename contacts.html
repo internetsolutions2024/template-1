@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="favicon.ico" type="image/svg+xml">
+   <title>Document</title>
+</head>
+
+<body>
+   <style>
+      /*-------contacts-----------*/
+
+      .contacts {
+         padding: 40px 0;
+         text-align: center;
+      }
+
+      .contacts-body {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         max-width: 700px;
+         margin: 0 auto;
+      }
+
+      .item-contacts {
+         display: flex;
+         flex-direction: column;
+         text-align: left;
+         flex: 1 1 40%;
+         margin: 10px;
+         padding: 25px;
+         background-color: #f6f9ff;
+      }
+
+      .item-contacts-image {
+         padding-bottom: 15px;
+      }
+
+      .item-contacts-image img {
+         width: 54px;
+         height: 54px;
+
+      }
+
+      .item-contacts-title {
+         color: var(--mycolor1);
+         font-weight: 600 !important;
+         font-size: 18px !important;
+      }
+
+      .item-contacts-text {
+         font-size: 14px;
+         line-height: 24px;
+      }
+
+      .item-contacts-image-call img {
+         animation: shake linear 1s infinite;
+      }
+
+      .item-contacts-image-bounce img {
+         animation: bounce linear 1s infinite;
+      }
+
+      .item-contacts-image-pulse img {
+         animation: pulse linear 1s infinite;
+      }
+
+      .item-contacts-image-rotate img {
+         animation: rotate linear 2s infinite;
+      }
+
+      @keyframes shake {
+         0% {
+            transform: rotate(0deg);
+
+         }
+
+         30% {
+            transform: rotate(0deg);
+
+         }
+
+         40% {
+            transform: rotate(5deg);
+
+         }
+
+         50% {
+            transform: rotate(0deg);
+
+         }
+
+         60% {
+            transform: rotate(5deg);
+
+         }
+
+         70% {
+            transform: rotate(0deg);
+
+         }
+
+         80% {
+            transform: rotate(0deg);
+
+         }
+
+         90% {
+            transform: rotate(0deg);
+
+         }
+
+         100% {
+            transform: rotate(0deg);
+
+         }
+
+      }
+
+      @keyframes bounce {
+         0% {
+            transform: translateY(0);
+
+         }
+
+
+         10% {
+            transform: translateY(0);
+
+         }
+
+         20% {
+            transform: translateY(0);
+
+         }
+
+         30% {
+            transform: translateY(-2px);
+
+         }
+
+         40% {
+            transform: translateY(0);
+
+         }
+
+         50% {
+            transform: translateY(-2px);
+
+         }
+
+         60% {
+            transform: translateY(0);
+
+         }
+
+         70% {
+            transform: translateY(-2px);
+
+         }
+
+         80% {
+            transform: translateY(0);
+
+         }
+
+         90% {
+            transform: translateY(0);
+
+         }
+
+         100% {
+            transform: translateY(0);
+
+         }
+
+
+      }
+
+      @keyframes pulse {
+         0% {
+            transform: scale(1);
+         }
+
+         10% {
+            transform: scale(1);
+         }
+
+         20% {
+            transform: scale(1);
+         }
+
+         30% {
+            transform: scale(1.05);
+         }
+
+         40% {
+            transform: scale(1);
+         }
+
+         50% {
+            transform: scale(1.05);
+         }
+
+         60% {
+            transform: scale(1);
+         }
+
+         70% {
+            transform: scale(1.05);
+         }
+
+         80% {
+            transform: scale(1);
+         }
+
+         90% {
+            transform: scale(1);
+         }
+
+         100% {
+            transform: scale(1);
+         }
+      }
+
+      @keyframes rotate {
+         0% {
+            transform: rotate(0);
+         }
+
+         10% {
+            transform: rotate(45deg);
+         }
+
+         20% {
+            transform: rotate(90deg);
+         }
+
+         30% {
+            transform: rotate(135deg);
+         }
+
+         40% {
+            transform: rotate(180deg);
+         }
+
+         50% {
+            transform: rotate(225deg);
+         }
+
+         60% {
+            transform: rotate(270deg);
+         }
+
+         70% {
+            transform: rotate(315deg);
+         }
+
+         80% {
+            transform: rotate(360deg);
+         }
+
+         90% {
+            transform: rotate(360deg);
+         }
+
+         100% {
+            transform: rotate(360deg);
+         }
+
+      }
+   </style>
+   <section class="contacts">
+      <div class="contacts__container _container">
+         <p class="contacts-sub-title sub-title">CONTACT</p>
+         <h2 class="contacts-title title">Contact Us</h2>
+         <div class="contacts-body">
+            <div class="contacts-item item-contacts">
+               <div class="item-contacts-image item-contacts-image-bounce"><img src="img-1/icons/contacts1.png" alt="">
+               </div>
+               <h4 class="item-contacts-title">
+                  Address
+               </h4>
+               <p class="item-contacts-text">A108 Adam Street, <br>
+                  New York, NY 535022</p>
+            </div>
+            <div class="contacts-item item-contacts">
+               <div class="item-contacts-image  item-contacts-image-call"><img src="img-1/icons/contacts2.png" alt="">
+               </div>
+               <h4 class="item-contacts-title">
+                  Call Us
+               </h4>
+               <p class="item-contacts-text">+1 5589 55488 55<br>+1 6678 254445 41</p>
+            </div>
+            <div class="contacts-item item-contacts">
+               <div class="item-contacts-image item-contacts-image-pulse"><img src="img-1/icons/contacts3.png" alt="">
+               </div>
+               <h4 class="item-contacts-title">
+                  Email Us
+               </h4>
+               <p class="item-contacts-text">info@example.com<br>contact@example.com</p>
+            </div>
+            <div class="contacts-item item-contacts">
+               <div class="item-contacts-image item-contacts-image-rotate"><img src="img-1/icons/contacts4.png" alt="">
+               </div>
+               <h4 class="item-contacts-title">
+                  Open Hours
+               </h4>
+               <p class="item-contacts-text">Monday - Friday<br>9:00AM - 05:00PM</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+</body>
+
+</html>

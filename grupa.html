@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="favicon.ico" type="image/svg+xml">
+   <title>Example-1</title>
+</head>
+
+<body>
+   <style>
+      /*----------general------------*/
+
+      body {
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      html,
+      body {
+         height: 100%;
+      }
+
+      body {
+         display: flex;
+         flex-direction: column;
+      }
+
+      .wrapper {
+         position: relative;
+         background-color: #f6f9ff;
+      }
+
+      .main {
+         flex: 1 0 auto;
+         box-sizing: border-box;
+         max-width: 900px;
+         margin: 0 auto;
+         background-color: #fff;
+      }
+
+      .footer {
+         flex: 0 0 auto;
+      }
+
+      :root {
+         --mycolor1: #012970;
+         --mycolor2: #444444;
+         --mycolor3: #4154f1;
+         --mycolor4: #f6f9ff;
+      }
+
+      * h2,
+      p,
+      h3,
+      h4 {
+         margin: 0 0 10px 0 !important;
+      }
+
+
+
+
+      /*-----------------BEM------------------*/
+
+      ._container {
+         max-width: 900px;
+         margin: 0 auto;
+         color: var(--mycolor2);
+      }
+
+      .sub-title {
+         color: var(--mycolor3);
+         text-transform: uppercase;
+         font-size: 18px !important;
+         font-weight: normal !important;
+      }
+
+      .title {
+         color: var(--mycolor1);
+         font-size: 30px !important;
+         font-weight: 600 !important;
+      }
+
+      /*---------acquaintance----------*/
+
+      .acquaintance {
+         background: url(img-1/hero-bg.png);
+         background-attachment: fixed;
+         background-size: cover;
+         text-align: left;
+         padding: 40px;
+         position: relative;
+      }
+
+      .acquaintance__container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
+         align-items: center;
+         padding: 0 10px;
+
+      }
+
+      .acquaintance-content {
+         flex: 1 1 50%;
+         padding: 40px 0;
+      }
+
+      .acquaintance-title {
+         margin: 0;
+         font-size: 40px;
+         font-weight: 700;
+         color: var(--mycolor1);
+      }
+
+      .acquaintance-sub-title {
+         color: var(--mycolor2);
+         margin: 15px 0 0 0;
+         font-size: 26px !important;
+         font-weight: normal !important;
+      }
+
+      .acquaintance-button {
+         margin-top: 30px;
+      }
+
+      .button {
+         display: inline-block;
+         padding: 12px 40px;
+         border-radius: 4px;
+         transition: 0.5s;
+         color: #fff;
+         background: var(--mycolor3);
+         box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+         text-decoration: none;
+         font-size: 18px;
+         cursor: pointer;
+      }
+
+      .button i {
+         padding: 0;
+         display: inline-block;
+         transition: transform .4s !important;
+      }
+
+      .button:hover i {
+         transform: translateX(5px);
+      }
+
+      .acquaintance-image {
+         flex: 1 1 50%;
+         max-width: 400px;
+      }
+
+      .acquaintance-image img {
+         width: 100%;
+      }
+
+      @media screen and (max-width: 600px) {
+
+         .acquaintance {
+            padding: 20px;
+         }
+
+         .acquaintance__container {
+            text-align: center;
+         }
+
+         .acquaintance-image {
+            flex: 0 0 100%;
+            padding: 20px 0 0;
+         }
+      }
+
+
+      /*--------canvas-siz---------*/
+      .canvas-size {
+         position: absolute;
+         top: 0;
+         right: 0;
+         padding: 0 10px;
+         border-radius: 5px;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .choise-size {
+         display: inline-block;
+         padding: 10px 20px;
+         color: #fff;
+         text-decoration: none;
+         background-color: var(--mycolor3);
+         margin-bottom: 10px;
+         font-size: 12px;
+         border: 1px solid #012970;
+         border-radius: 5px;
+         text-align: center;
+         font-weight: 600;
+         transition: .3s;
+      }
+
+      .choise-size-active {
+         background-color: var(--mycolor1);
+      }
+
+      .choise-size:hover {
+         box-shadow: 0px 5px 5px rgba(65, 84, 241, 0.4);
+         transition: .3s;
+      }
+
+      .canvas-size-title {
+         font-size: 18px !important;
+         color: var(--mycolor1);
+      }
+
+      @media screen and (max-width: 899px) {
+         .canvas-size {
+            display: none;
+         }
+      }
+
+      /*---------fuatures-----------*/
+      .fuatures {
+         padding: 40px 0;
+         text-align: center;
+      }
+
+      .fuatures__container {}
+
+      .fuatures-body {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 10px;
+         margin-top: 30px;
+      }
+
+      .fuatures-image {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         flex: 1 1 50%;
+         max-width: 400px;
+      }
+
+      .fuatures-image img {
+         width: 100%;
+      }
+
+      .fuatures-content {
+         flex: 1 1 50%;
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+      }
+
+      .item-fuatures {
+         flex: 1 1 30%;
+         padding: 15px 15px 15px 10px;
+         margin: 10px;
+         display: flex;
+         align-items: center;
+         text-align: left;
+         box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+      }
+
+      .item-fuatures p {
+         margin: 0 !important;
+      }
+
+      .item-fuatures_check-area {
+         padding: 5px 10px 7px 10px;
+         background-color: var(--mycolor4);
+         margin-right: 10px;
+         border-radius: 3px;
+         transition: .3s;
+      }
+
+      .item-fuatures:hover .item-fuatures_check-area {
+         background-color: var(--mycolor3);
+         transition: .3s;
+      }
+
+      .item-fuatures:hover .item-fuatures_check {
+         color: #fff;
+         transition: .3s;
+      }
+
+      .item-fuatures_check {
+         font-weight: 900;
+         color: var(--mycolor1);
+      }
+
+      .item-fuatures-text {
+         color: var(--mycolor1);
+      }
+
+      @media screen and (max-width: 375px) {
+         .item-fuatures {
+            flex: 1 1 100%;
+         }
+      }
+
+      /*------------------*/
+
+      .neque {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 10px;
+         margin-top: 40px;
+         padding: 40px 10px;
+      }
+
+      .neque-content {
+         flex: 1 1 50%;
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         text-align: left;
+      }
+
+      .neque-title {
+         font-size: 26px !important;
+         color: var(--mycolor1);
+      }
+
+      .neque-text {}
+
+      .neque-check {
+         color: var(--mycolor1);
+         font-weight: 600 !important;
+      }
+
+      .neque-checked {
+         color: var(--mycolor3);
+      }
+
+      .neque-image {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         flex: 1 1 50%;
+         max-width: 400px;
+      }
+
+
+      .neque-image img {
+         width: 100%;
+      }
+
+      /*----------------*/
+
+      .ratione {
+         margin-top: 40px;
+      }
+
+      .ratione-body {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 10px;
+         margin-top: 40px;
+         padding: 0 10px;
+      }
+
+      .ratione-image {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         flex: 1 1 40%;
+         max-width: 300px;
+      }
+
+      .ratione-image img {
+         width: 100%;
+      }
+
+      .ratione-content {
+         flex: 1 1 60%;
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         text-align: left;
+      }
+
+
+      .item-ratione {
+         display: flex;
+         flex: 1 1 45%;
+         margin: 10px;
+      }
+
+      .item-ratione-icon {
+         margin-right: 10px;
+      }
+
+      .item-ratione-icon img {
+         width: 40px;
+         height: 40px;
+      }
+
+      .item-ratione-content {}
+
+      .item-ratione-title {
+         font-size: 16px !important;
+         font-weight: 600 !important;
+         color: var(--mycolor1);
+      }
+
+      .item-ratione-text {
+         font-size: 14px !important;
+      }
+
+      /*--------services-----------*/
+      .services {
+         padding: 40px 0 20px;
+         text-align: center;
+      }
+
+      .services__container {}
+
+      .services-body {
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         margin: 0 10px;
+      }
+
+      .services-item {
+         background-color: #fff;
+         margin: 10px 0;
+         padding: 25px 10px;
+         flex: 1 1 10%;
+         border-radius: 5px;
+         transition: .2s;
+      }
+
+      .services-item:hover {
+         color: #fff;
+         transition: .2s;
+         background-color: #2db6fa;
+      }
+
+      .services-item:hover .services-button {
+         color: #fff;
+         transition: .2s;
+      }
+
+      .services-item:nth-child(2) {}
+
+      .services-item:nth-child(2):hover {
+         background-color: #f68c09;
+      }
+
+      .services-item:nth-child(3) {}
+
+      .services-item:nth-child(3):hover {
+         background-color: #08da4e;
+      }
+
+      .services-item:nth-child(4) {}
+
+      .services-item:nth-child(4):hover {
+         background-color: #e9222c;
+      }
+
+      .services-item:nth-child(5) {}
+
+      .services-item:nth-child(5):hover {
+         background-color: #b50edf;
+      }
+
+      .services-item:nth-child(6) {
+         border-bottom: 3px solid #f51f9c;
+      }
+
+      .services-item:nth-child(6):hover {
+         background-color: #f51f9c;
+      }
+
+      .services-icon {
+         background-color: rgba(45, 182, 250, 0.2);
+         display: inline-block;
+         margin-bottom: 10px;
+         border-radius: 5px;
+      }
+
+      .services-icon-blue {
+         background-color: rgba(45, 182, 250, 0.2);
+
+      }
+
+      .services-icon-orange {
+         background-color: rgba(246, 140, 9, 0.2);
+      }
+
+      .services-icon-green {
+         background-color: rgba(8, 218, 78, 0.2);
+      }
+
+      .services-icon-red {
+         background-color: rgba(233, 34, 44, 0.2);
+      }
+
+      .services-icon-purple {
+         background-color: rgba(181, 14, 223, 0.2);
+      }
+
+      .services-icon-pink {
+         background-color: rgba(245, 31, 156, 0.2);
+      }
+
+      .services-item:hover .services-icon {
+         background-color: #fff !important;
+      }
+
+      .services-icon img {
+         width: 44px;
+         height: 44px;
+         padding: 15px;
+
+
+      }
+
+      .services-headline {
+         font-size: 18px !important;
+         font-weight: 600 !important;
+      }
+
+      .services-text {
+         font-size: 14px;
+      }
+
+      .services-button {
+         background: none !important;
+         box-shadow: none;
+         margin: 0 !important;
+         padding: 10px;
+         font-size: 15px;
+         transition: .2s;
+      }
+
+      .services-button i {
+         transition: color 0s;
+      }
+
+      .blue {
+         color: #2db6fa;
+      }
+
+      .orange {
+         color: #f68c09;
+      }
+
+      .green {
+         color: #08da4e;
+      }
+
+      .red {
+         color: #e9222c;
+      }
+
+      .purple {
+         color: #b50edf;
+      }
+
+      .pink {
+         color: #f51f9c;
+      }
+
+      .button {}
+
+      @media screen and (max-width: 550px) {
+         .services-item {
+            flex: 1 1 100%;
+
+         }
+      }
+
+      /*----------faq------------*/
+
+      .faq {
+         padding: 40px 0;
+         text-align: center;
+      }
+
+
+      .faq-body {
+         padding-top: 20px;
+      }
+
+      .faq-body-content {
+         text-align: left;
+         display: flex;
+         flex-wrap: wrap;
+
+      }
+
+      summary::-webkit-details-marker {
+         display: none;
+      }
+
+      summary::-moz-list-bullet {
+         list-style-type: none;
+      }
+
+      summary::marker {
+         display: none;
+      }
+
+      summary {
+         padding: 5px 25px 10px 0px;
+         display: block;
+         font-size: 18px;
+         font-weight: 400 !important;
+         cursor: pointer;
+         position: relative;
+         border-bottom: 2px solid #f3f3f3;
+      }
+
+      summary:before {
+         right: .3em;
+         top: .3em;
+         color: transparent;
+         background: url(img-1/icons/faq.png) no-repeat 50% 50% / 0.8em 0.8em;
+         width: 1em;
+         height: 1em;
+         content: "";
+         position: absolute;
+         transition: transform .5s;
+
+      }
+
+      details[open]>summary:before {
+         transform: rotateZ(180deg);
+
+      }
+
+      summary~* {
+         padding: 10px 0 0 0;
+      }
+
+      details[open] summary~* {
+         animation: sweep .5s ease-in-out;
+
+      }
+
+      details[open] summary {
+         border-bottom: 2px solid #ffffff;
+         color: var(--mycolor3);
+      }
+
+      @keyframes sweep {
+         0% {
+            opacity: 0;
+         }
+
+         100% {
+            opacity: 1;
+         }
+      }
+
+      summary:focus {
+         outline: 0;
+
+      }
+
+      details {
+         display: flex;
+         flex: 1 1 40%;
+         margin: 10px;
+      }
+
+      @media screen and (max-width: 500px) {
+         details {
+            flex: 1 1 100%;
+         }
+      }
+   </style>
+   <div class="wrapper">
+      <div class="main">
+         <section class="acquaintance">
+            <div class="acquaintance__container _container">
+               <div class="acquaintance-content">
+                  <p class="acquaintance-title">We offer modern solutions for growing your business</p>
+                  <p class="acquaintance-sub-title">We are team of talented designers making websites with Bootstrap
+                  </p>
+                  <a class="acquaintance-button button" href=""> Get Started
+                     <i>➞</i></a>
+               </div>
+               <div class="acquaintance-image">
+                  <img src="img-1/hero-img.png" alt="hero">
+               </div>
+            </div>
+         </section>
+         <section class="fuatures">
+            <div class="fuatures__container _container">
+               <p class="fuatures-sub-title sub-title">Переваги</p>
+               <h2 class="fuatures-title title">Плюси товарів групи</h2>
+               <div class="fuatures-body">
+                  <div class="fuatures-image"><img src="img-1/features.png" alt="">
+                  </div>
+                  <div class="fuatures-content">
+                     <div class="fuatures-item item-fuatures">
+                        <div class="item-fuatures_check-area">
+                           <div class="item-fuatures_check">✓</div>
+                        </div>
+                        <p class="item-fuatures-text">Eos aspernatur rem</p>
+                     </div>
+                     <div class="fuatures-item item-fuatures">
+                        <div class="item-fuatures_check-area">
+                           <div class="item-fuatures_check">✓</div>
+                        </div>
+                        <p class="item-fuatures-text">Facilis neque ipsa</p>
+                     </div>
+                     <div class="fuatures-item item-fuatures">
+                        <div class="item-fuatures_check-area">
+                           <div class="item-fuatures_check">✓</div>
+                        </div>
+                        <p class="item-fuatures-text">Volup amet voluptas</p>
+                     </div>
+                     <div class="fuatures-item item-fuatures">
+                        <div class="item-fuatures_check-area">
+                           <div class="item-fuatures_check">✓</div>
+                        </div>
+                        <p class="item-fuatures-text">Rerum omnis sint</p>
+                     </div>
+                     <div class="fuatures-item item-fuatures">
+                        <div class="item-fuatures_check-area">
+                           <div class="item-fuatures_check">✓</div>
+                        </div>
+                        <p class="item-fuatures-text">
+                           Alias possimus</p>
+                     </div>
+                     <div class="fuatures-item item-fuatures">
+                        <div class="item-fuatures_check-area">
+                           <div class="item-fuatures_check">✓</div>
+                        </div>
+                        <p class="item-fuatures-text">Repellendus mollitia</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="neque">
+                  <div class="neque-content">
+
+                     <h3 class="neque-title">Правила встановлення чи догляду</h3>
+                     <p class="neque-text">Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus
+                        expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+                     <p class="neque-check">
+                        <span class="neque-checked">✓</span>
+                        Repudiandae rerum velit modi et officia quasi facilis
+                     </p>
+                     <p class="neque-text">Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima
+                        commodi dolorum non eveniet magni quaerat nemo et.</p>
+                     <p class="neque-check">
+                        <span class="neque-checked">✓</span>
+                        Incidunt non veritatis illum ea ut nisi
+                     </p>
+                     <p class="neque-text">Non quod totam minus repellendus autem sint velit. Rerum debitis facere
+                        soluta
+                        tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo
+                        tempora. Quia et perferendis.</p>
+                  </div>
+                  <div class="neque-image"><img src="img-1/features-2.png" alt=""></div>
+               </div>
+               <div class="ratione">
+                  <h3 class="ratione-title title">Переваги нашої компанії</h3>
+                  <div class="ratione-body">
+                     <div class="ratione-image"><img src="img-1/features-3.png" alt=""></div>
+                     <div class="ratione-content">
+                        <div class="ratione-item item-ratione">
+                           <div class="item-ratione-icon"><img src="img-1/icons/ratione1.png" alt=""></div>
+                           <div class="item-ratione-content">
+                              <h4 class="item-ratione-title">Corporis voluptates sit</h4>
+                              <p class="item-ratione-text">Consequuntur sunt aut quasi enim aliquam quae harum pariatur
+                                 laboris nisi ut aliquip</p>
+                           </div>
+                        </div>
+                        <div class="ratione-item item-ratione">
+                           <div class="item-ratione-icon"><img src="img-1/icons/ratione2.png" alt=""></div>
+                           <div class="item-ratione-content">
+                              <h4 class="item-ratione-title">Ullamco laboris nisi</h4>
+                              <p class="item-ratione-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                 qui officia deserunt</p>
+                           </div>
+                        </div>
+                        <div class="ratione-item item-ratione">
+                           <div class="item-ratione-icon"><img src="img-1/icons/ratione3.png" alt=""></div>
+                           <div class="item-ratione-content">
+                              <h4 class="item-ratione-title">Labore consequatur</h4>
+                              <p class="item-ratione-text">Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut
+                                 maiores omnis facere</p>
+                           </div>
+                        </div>
+                        <div class="ratione-item item-ratione">
+                           <div class="item-ratione-icon"><img src="img-1/icons/ratione4.png" alt=""></div>
+                           <div class="item-ratione-content">
+                              <h4 class="item-ratione-title">Beatae veritatis</h4>
+                              <p class="item-ratione-text">Expedita veritatis consequuntur nihil tempore laudantium
+                                 vitae
+                                 denat pacta</p>
+                           </div>
+                        </div>
+                        <div class="ratione-item item-ratione">
+                           <div class="item-ratione-icon"><img src="img-1/icons/ratione5.png" alt=""></div>
+                           <div class="item-ratione-content">
+                              <h4 class="item-ratione-title">Molestiae dolor</h4>
+                              <p class="item-ratione-text">Et fuga et deserunt et enim. Dolorem architecto ratione tensa
+                                 raptor marte</p>
+                           </div>
+                        </div>
+                        <div class="ratione-item item-ratione">
+                           <div class="item-ratione-icon"><img src="img-1/icons/ratione6.png" alt=""></div>
+                           <div class="item-ratione-content">
+                              <h4 class="item-ratione-title">Explicabo consectetur</h4>
+                              <p class="item-ratione-text">Est autem dicta beatae suscipit. Sint veritatis et sit quasi
+                                 ab
+                                 aut inventore</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="services">
+            <div class="services__container _container">
+               <p class="services-sub-title sub-title">Замовлення</p>
+               <h2 class="services-title title">Як здійснити покупку в нашому інтернет магазині?</h2>
+               <div class="services-body">
+                  <div class="services-item">
+                     <div class="services-icon services-icon-blue"><img src="img-1/icons/delivery1.png" alt="">
+                     </div>
+                     <h4 class="services-headline">Замовлення</h4>
+                     <p class="services-text">Provident nihil minus qui consequatur non omnis maiores. Eos accusantium
+                        minus dolores iure perferendis tempore et consequatur.</p>
+                  </div>
+                  <div class="services-item">
+                     <div class="services-icon services-icon-orange"><img src="img-1/icons/chat2.png" alt="">
+                     </div>
+                     <h4 class="services-headline">Узгодження</h4>
+                     <p class="services-text">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero
+                        corrupti neque eum hic non ut
+                        nesciunt dolorem.</p>
+                  </div>
+                  <div class="services-item">
+                     <div class="services-icon services-icon-green"><img src="img-1/icons/delivery3.png" alt="">
+                     </div>
+                     <h4 class="services-headline">Оплата</h4>
+                     <p class="services-text">Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut.
+                        Vel
+                        qui id voluptas adipisci
+                        eos earum corrupti.</p>
+                  </div>
+                  <div class="services-item">
+                     <div class="services-icon services-icon-red"><img src="img-1/icons/delivery4.png" alt="">
+                     </div>
+                     <h4 class="services-headline">Доставка</h4>
+                     <p class="services-text">Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed
+                        error ea fuga sit provident
+                        adipisci neque.</p>
+                  </div>
+
+               </div>
+            </div>
+
+         </section>
+
+         <section class="faq">
+            <div class="faq__container _container">
+               <p class="faq-sub-title sub-title">F.A.Q</p>
+               <h2 class="faq-title title">Найпоширеніші питання</h2>
+               <div class="faq-body">
+                  <div itemscope itemtype="https://schema.org/FAQPage" class="faq-body-content">
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Non consectetur a erat nam at lectus urna duis?
+
+                        </summary>
+
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                              curabitur
+                              gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+
+
+                           </p>
+                        </div>
+                     </details>
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+
+                        </summary>
+
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                              curabitur
+                              gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+
+
+                           </p>
+                        </div>
+                     </details>
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
+
+                        </summary>
+
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                              curabitur
+                              gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+
+
+                           </p>
+                        </div>
+                     </details>
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
+
+                        </summary>
+
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                              curabitur
+                              gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+
+
+                           </p>
+                        </div>
+                     </details>
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
+
+                        </summary>
+
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                              curabitur
+                              gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+
+
+                           </p>
+                        </div>
+                     </details>
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Varius vel pharetra vel turpis nunc eget lorem dolor?
+                        </summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                              curabitur
+                              gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                           </p>
+                        </div>
+                     </details>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <div class="canvas-size">
+         <p class="canvas-size-title"></p>
+         <a href="index.html" class=" choise-size">900px</a><a href="1000px.html" class="choise-size ">1000px</a><a
+            href="1100px.html" class="  choise-size">1100px</a><a href="1200px.html" class="  choise-size">1200px</a><a
+            href="mobile.html" class="choise-size">Mobile</a><a href="grupa.html"
+            class="choise-size choise-size-active ">Оформлення <br> для групи </a>
+      </div>
+   </div>
+
+</body>
+
+</html>
